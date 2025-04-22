@@ -10,8 +10,7 @@ window.onload = function () {
     page: window.location.pathname,
   };
 
-  // todo: https://paper.theditor.xyz/api/event
-  fetch("http://localhost:8080/api/event", {
+  fetch(cfg.devMode ? "http://localhost:6787/api/event" : "https://paper.theditor.xyz/api/event", {
     method: 'post',
     body: JSON.stringify(data)
   })
